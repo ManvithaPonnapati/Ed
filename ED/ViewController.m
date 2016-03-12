@@ -41,6 +41,15 @@
     return NO; // We do not want UITextField to insert line-breaks.
 }
 - (IBAction)Login:(id)sender {
+    
+    [KCSUser loginWithUsername:username.text password:password.text withCompletionBlock:^(KCSUser *user, NSError *errorOrNil, KCSUserActionResult result) {
+        if (errorOrNil ==  nil) {
+            [self performSegueWithIdentifier:@"LoginSuccess" sender:self];
+        } else {
+            //there was an error with the update save
+            NSString* message = [errorOrNil localizedDescription];
+                   }
+    }];
 }
 
 - (IBAction)Signup:(id)sender {

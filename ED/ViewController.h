@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <KinveyKit/KinveyKit.h>
 @interface ViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *username;
